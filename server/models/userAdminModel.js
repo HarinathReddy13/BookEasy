@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 //define schema
-const userAuthorSchema=mongoose.Schema({
+const userAdminSchema=new mongoose.Schema({
   role:{
     type:String,
     required:true
@@ -11,7 +11,8 @@ const userAuthorSchema=mongoose.Schema({
   },
   email:{
     type:String,
-    required:true
+    required:true,
+    unique:true
   },
   profileImageUrl:{
     type:String
@@ -28,6 +29,6 @@ const userAuthorSchema=mongoose.Schema({
 },{"strict":"throw"})
 
 //create model
-const UserAdmin=mongoose.model('useradmin',userAuthorSchema)
+const UserAdmin=mongoose.model('useradmin',userAdminSchema)
 
 module.exports=UserAdmin

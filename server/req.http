@@ -1,4 +1,117 @@
-GET http://localhost:3000/user-api/users
 
 ###
-GET http://localhost:3000/admin-api
+POST http://localhost:3000/user-api/user
+Content-Type:application/json
+
+{
+  "role":"user",
+  "name":"Harry",
+  "email":"HArry10@gmail.com",
+  "profileImageUrl":"",
+  "status":"pending",
+  "isActive":true
+} 
+
+###
+POST http://localhost:3000/user-api/request
+Content-Type:application/json
+
+{
+  "requestId":"{{$timestamp}}",
+  "userData":{
+    "name":"Harry",
+    "userId":"1234",
+    "email":"Harry10@gmail.com",
+    "profileImageUrl":""
+  },
+  "title":"ISTE Meet",
+  "description":"Meeting to decide action commitee",
+  "dateOfApplication":"{{$datetime rfc1123}}",
+  "status":"pending",
+  "additionalReq":"",
+  "dateOfEvent":"{{$datetime rfc1123}}",
+  "venueId":"1234"
+} 
+
+###
+PUT http://localhost:3000/user-api/request/mod
+Content-Type:application/json
+
+{
+  "_id":"68555397e6682558e9400c2c",
+  "requestId":"{{$timestamp}}",
+  "userData":{
+    "name":"Harry",
+    "userId":"1234",
+    "email":"Harry10@gmail.com",
+    "profileImageUrl":""
+  },
+  "title":"ISTE Meeting",
+  "description":"Meeting to decide action commitee",
+  "dateOfApplication":"{{$datetime rfc1123}}",
+  "status":"pending",
+  "additionalReq":"",
+  "dateOfEvent":"{{$datetime rfc1123}}",
+  "venueId":"1234"
+} 
+
+###
+GET http://localhost:3000/user-api/requests/1234
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+GET http://localhost:3000/admin-api/users
+
+###
+GET http://localhost:3000/admin-api/venues
+
+###
+GET http://localhost:3000/admin-api/requests
+
+###
+POST http://localhost:3000/admin-api/admin
+Content-Type:application/json
+
+{
+  "role":"admin",
+  "name":"Harry10",
+  "email":"Hsjndd@gmail.com",
+  "profileImageUrl":"",
+  "status":"pending",
+  "isActive":true
+} 
+
+###
+POST http://localhost:3000/admin-api/venue
+Content-Type:application/json
+
+{
+  "name":"KS Audi",
+  "venueId":"{{$timestamp}}",
+  "location":"To the right after entering the C-Block in ground floor",
+  "category":"Auditorium",
+  "capacity":350,
+  "facilities":["4 Screens","Lighting","Speakers"],
+  "rules":[
+    "Keep the auditorium stage clean",
+    "Make sure to remove all the decorations after the event",
+    "Turn off the lights and other electricals after the event"
+  ],
+  "picturesUrls":[],
+  "isVenueActive":true
+} 
+
+###
+PUT http://localhost:3000/admin-api/venue/1750500659

@@ -13,7 +13,8 @@ mongoose.connect(process.env.DBURL)
     console.log('DB connection successful')
   })
   .catch((err) => console.log('Error in connecting to DB:', err))
-
+//body parser middleware
+app.use(exp.json())
 //connect API routes
 app.use('/user-api',userApp)
 app.use('/admin-api',adminApp)
