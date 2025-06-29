@@ -7,6 +7,7 @@ import Home from './components/common/Home.jsx'
 import LandingPage from './components/common/LandingPage.jsx'
 import Signin from './components/common/Signin.jsx'
 import Signup from './components/common/Signup.jsx'
+import AboutUs from './components/common/AboutUs.jsx'
 import UserProfile from './components/user/UserProfile.jsx'
 import Venues from './components/common/Venues.jsx'
 import VenuesById from './components/common/VenuesById.jsx'
@@ -16,6 +17,7 @@ import MakeRequest from './components/user/MakeRequest.jsx'
 import AdminProfile from './components/admin/AdminProfile.jsx'
 import AddVenue from './components/admin/AddVenue.jsx'
 import UserAdminContext from './contexts/UserAdminContext.jsx'
+
 
 const browserRouterObj = createBrowserRouter([
   {
@@ -48,6 +50,10 @@ const browserRouterObj = createBrowserRouter([
       {
         path: "signup",
         element: <Signup />
+      },
+      {
+        path:"aboutus",
+        element:<AboutUs/>
       },
       {
         path: "user-profile/:email",

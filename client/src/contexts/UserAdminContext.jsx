@@ -7,7 +7,13 @@ function UserAdminContext({children}) {
     name:'',
     email:'',
     profileImageUrl:'',
-    role:''
+    role:'',
+    status:'pending',
+    isActive:true,
+    isProfileComplete:false,
+    clubName:'',
+    clubCategory:'',
+    clubPosition:''
   })
   return (
     <userAdminContextObj.Provider value={{currentUser,setCurrentUser }}>

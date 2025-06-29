@@ -25,6 +25,23 @@ const userAdminSchema=new mongoose.Schema({
   isActive:{
     type:Boolean,
     default:true
+  },
+  isProfileComplete:{
+    type:Boolean,
+    default:false
+  },
+  clubName:{
+    type:String,
+    required:true
+  },
+  clubCategory:{
+    type:String,
+    enum:['Cultural Club','Technical Club','Student Chapter'],
+    required:true
+  },
+  clubPosition:{
+    type:String,
+    required:true
   }
 },{"strict":"throw"})
 

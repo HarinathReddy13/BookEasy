@@ -31,4 +31,11 @@ userApp.get('/requests/:usrId',expressAsyncHandler(async (req,res)=>{
   res.status(200).send({message:"All the requests of the user",payload:reqList})
 }))
 
+//get userByEmail
+userApp.get('/user/:emal',expressAsyncHandler(async (req,res)=>{
+  const {emal}=req.params
+  let user=await UserAdmin.findOne({email:emal})
+  res.status(200).send({message:"user",payload:user})
+}))
+
 module.exports=userApp
